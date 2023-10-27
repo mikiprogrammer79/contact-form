@@ -4,10 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="How to get email from a submitted HTML form" />
-    <title>Document</title>
+    <title>Contact Form</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    
+    <h1 id="title">Contact Form</h1>
+      <p id="greeting">Thank you for taking the time to contact me!</p>
+      <!--HTML Form-->
+      <form id="contact-form" action="form-to-email.php" method="post" enctype="application/x-www-form-urlencoded">
+        <fieldset>
+            <label for="name" id="name-label">
+                Name <input id="name" type="text" name="name" required />
+            </label>
+            <label for="email" id="email-label">
+                Email <input id="email" type="email" name="email" required />
+            </label>
+            <label for="number" id="number-label">
+                Age <input id="number" type="number" min="13" name="age" placeholder="(optional)" /> 
+            </label>
+            </fieldset>
+            <fieldset class="r-top">
+            <label for="dropdown">Why do you want to contact me? 
+                <select id="dropdown" name="reason">
+                    <option value="" name="">(select one)</option>
+                    <option value="quest" name="quest">Questions</option>
+                    <option value="workwith" name="workwithme">Work with me as a team</option>
+                    <option value="workfor" name="workforyou">Work for you as a developer</option>
+                    <option value="os" name="os-contributions">Open Source Contributions</option>
+                    <option value="other" name="other">Other</option>       
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+          <legend>
+            Are you a Software Developer?
+          </legend>
+          <label for="no">
+            <input class="inline" id="no" type="radio" name="dev" value="not" checked /> No, I'm not
+          </label>
+          <label for="beginner">
+            <input class="inline" id="beginner" type="radio" name="dev" value="beginner" /> Beginner
+            </label>
+            <label for="intermediate">
+            <input class="inline" id="intermediate" type="radio" name="dev" value="intermediate" /> Intermediate
+            </label>
+            <label for="advance">
+            <input class="inline" id="advance" type="radio" name="dev" value="advance"/> Advance
+            </label>
+            </legend>
+        </fieldset>
+        <fieldset>
+          <legend>
+            Which is your main Dev area?
+            <label for="front-end">
+              <input class="inline" id="front-end" type="checkbox" name="front-end" value="frontEnd"> Front End Development
+            </label>
+            <label for="back-end">
+              <input class="inline" id="back-end" type="checkbox" name="back-end" value="backEnd"> Back End Development
+            </label>
+            <label for= "full-stack">
+              <input class="inline" id="full-stack" type="checkbox" name="full-stack" value="fullStack"> Full Stack Development
+            </label>
+            <label for="game">
+              <input class="inline" id="game" type="checkbox" name="game-dev" value="gameDev"> Game Development
+            </label>
+            <label for="desk-mob">
+              <input class="inline" id="desk-mob" type="checkbox" name="desk-mob" value="deskMob"> Desktop and Mobile Development
+            </label>
+            <label for="other">
+              <input class="inline" id="other" type="checkbox" name="other" value="other"> Other areas
+            </label>
+          </legend>
+        </fieldset>
+        <fieldset>
+          <legend>
+            Additional Comments:
+          <label for="comments">
+            <textarea id="comments" rows="5" cols="30" name="message">
+            </textarea>
+          </label>
+          </legend>
+        </fieldset>
+        <input id="submit" type="submit" value="Submit" />
+      </form>
 </body>
 </html>

@@ -14,7 +14,7 @@ $area = array("");
 foreach($_POST['area'] as $value){
       array_push($area, $value);
 }
-$developerArea = implode("','", $area);
+$developerArea = implode(" | ", $area);
 
 // Compossing the email message:
 $to      = "mikiprogrammer79@gmail.com";
@@ -25,7 +25,7 @@ $message = "Hello Miki,
     Email: $userEmail
     Age: $userAge
     The contact reason is: $contactReason
-    $name is a $developer developer and his main devArea are:
+    $name is a $developer developer and his main devAreas are:
     $developerArea
     Message:
     $message .

@@ -69,3 +69,7 @@ body {
     .r-top {
         padding-top: 0;
     }
+
+    #submit:hover {
+      background-color: lightsalmon;
+    }

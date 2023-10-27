@@ -24,7 +24,7 @@ $message = "Hello,
     ";
 $area[] = $devArea;
 $headers = 'From: webmaster@example.com' . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
+    "Reply-To: $userEmail" . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 // Sending the email:

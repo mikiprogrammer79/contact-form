@@ -9,20 +9,27 @@ $developer = $_POST["dev"];
 $devArea = $_POST["area"];
 $message = $_POST["message"];
 
+// Developer Area array iteration:
+$area = array("");
+foreach($_POST['area'] as $value){
+      array_push($area, $value);
+}
+$developerArea = implode("','", $area);
+
 // Compossing the email message:
-$to      = "[Put your email address here]";
+$to      = "mikiprogrammer79@gmail.com";
 $subject = "Contact Form Submission";
-$message = "Hello, 
+$message = "Hello Miki, 
     You have got a new submission message:
     Name: $name 
     Email: $userEmail
     Age: $userAge
     The contact reason is: $contactReason
-    $name is a $developer developer
+    $name is a $developer developer and his main devArea are:
+    $developerArea
     Message:
     $message .
     ";
-$area[] = $devArea;
 $headers = 'From: webmaster@example.com' . "\r\n" .
     "Reply-To: $userEmail" . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
@@ -34,5 +41,6 @@ mail($to, $subject, $message, $headers);
 echo("<h3>Thank you to submit your details and message</h3>
     <p>$name, your message has been successfully sent.</p>
     <p>You will get a response as soon as possible within the next 48 hours.</p>
-    <p>Thanks</p>")
+    <p>Thanks</p>");
+
 ?>
